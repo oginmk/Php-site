@@ -2,17 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div id="navbar">
-<a href="login.php">Login</a>
-<a href="register.php">Register</a>
-    <form action="">
-    <input type="text" placeholder="Search">
-    <button type="submit">Submit</button>
-    </form>
+<div class="navbar">
+    <a href="login.php">Login</a>
+    <a href="register.php">Register</a>
+
+    <div class="container-search">
+        <form action="search.php">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </div>
-<div class="search"></div>
+<div style="padding-left: 20px" >
+<h3>Hello, this is the basic homepage for my PHP project</h3>
+    <p></p>
+</div>
 </body>
+</html>
