@@ -1,3 +1,7 @@
+<?php
+include 'PHP/register.php'
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +10,7 @@
 </head>
 <body>
 
-<form action="PHP/register.php">
+<form action="PHP/register.php" method="post">
     <div class="container">
 
         <h1>Register</h1>
@@ -47,14 +51,13 @@
         </select>
         <br>
         <hr>
-
-        <button type="submit" class="registerbtn">Register</button>
-    </div>
-
-    <div class="container signin">
-        <p>Already have an account? <a href="LoginPage.html">Sign in</a>.</p>
+        <button type="submit" class="registerbtn" name="kopce123">Register</button>
     </div>
 </form>
+
+<div class="container signin">
+    <p>Already have an account? <a href="LoginPage.html">Sign in</a>.</p>
+</div>
 
 </body>
 </html>
