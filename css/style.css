@@ -35,6 +35,13 @@ body{
     border: none;
     width: 500px;
 }
+#devtype {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 16px;
+    border: none;
+
+}
 
 .navbar .container-search button {
     float: right;
@@ -66,4 +73,8 @@ body{
     .navbar input[type=text] {
         border: 1px solid #ccc;
     }
+}
+.option {
+    font-weight: bold;
+    font-style: italic;
 }
