@@ -19,6 +19,13 @@
         <button type="submit">Login</button>
     </div>
 </form>
-
+<?php
+ if(isset($_GET["success"])){
+     if ($_GET['success']==1){
+         echo '<p>Successful Creation!</p>';
+         echo '<p>You can now log in </p>';
+     }
+ }
+?>
 </body>
 </html>
