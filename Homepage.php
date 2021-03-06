@@ -55,17 +55,20 @@ session_start();
     <h2>Hello</h2>
     <!--   <h3>This is the basic homepage for my PHP project</h3> -->
 </div>
-<h2 style="text-align: left">
+<div id="results">
+<h3>
 <?php
 if(isset($_GET["search"])){
     if ($_GET['search']=='yes') {
         $datapage = $_SESSION['data'];
+//        sortData($datapage);
         foreach ($datapage as $value) {
             echo "<pre>" . var_export($value[1]) . "</pre>";
         }
     }
 }
 ?>
-</h2>
+</h3>
+</div>
 </body>
 </html>
