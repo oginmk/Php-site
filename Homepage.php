@@ -26,7 +26,7 @@ session_start();
 
 
     <div class="container-search">
-        <form action="PHP/search.php">
+        <form action="PHP/search.php" method="post">
             <label for="devtype">Choose your preferred developer type</label>
             <select name="developerType" id="devtype">
                 <option value="FrontEnd" class="option">Front End Developer</option>
@@ -47,7 +47,7 @@ session_start();
                 <option value="NestJS">&nbsp;&nbsp;- NestJS</option>
             </select>
             <input type="text" placeholder="Search.." name="search">
-            <button type="submit">Submit</button>
+            <button type="submit" name="searchButton">Submit</button>
         </form>
     </div>
 </div>

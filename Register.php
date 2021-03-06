@@ -28,6 +28,9 @@ include 'PHP/register.php'
             }elseif($_GET['error']=="passShort"){
                 echo '<p>Password is too short!!!</p>';
                 echo '<p>Try Again</p>';
+            }elseif($_GET['error']=="userExists"){
+                echo '<p>User Already exists!!!</p>';
+                echo '<p>Try Again</p>';
             }
         }
         ?>

@@ -11,7 +11,7 @@ if (isset($_POST["submitB"])){
         header('location: ../LoginPage.php?error=Invalid');
         exit();
     }
-    $sql= "SELECT id,password,nameUser FROM usersinfo WHERE email = '$email' LIMIT 1";
+    $sql= "SELECT id,password,nameUser,email FROM usersinfo WHERE email = '$email' LIMIT 1";
     $quer = mysqli_query($connection,$sql);
 
 //proverka dali postoi
@@ -21,9 +21,11 @@ if (isset($_POST["submitB"])){
         $passwordtemp = $row['password'];
         $id = $row['id'];
         $nameUser = $row['nameUser'];
+        $email = $row['email'];
         $statement = password_verify($password,$passwordtemp);
         if ($statement==true){
             $_SESSION['nameUser']=$nameUser;
+            $_SESSION['email']=$email;
             header('location: ../Homepage.php');
             exit();
         }
