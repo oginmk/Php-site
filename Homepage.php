@@ -60,7 +60,6 @@ if(isset($_GET["search"])){
     if ($_GET['search']=='yes'){
         $data = $_SESSION['data'];
         $data = array_unique($data);
-//        $data = $data['email'];
             echo "<br>" .print_r($data). "<br>";
     }
 }
