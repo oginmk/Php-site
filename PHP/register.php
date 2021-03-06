@@ -1,5 +1,7 @@
 <?php
 include 'dbh.inc.php';
+require_once 'dbh.inc.php';
+require_once 'Functions.php';
 $host = "localhost";
 $port = 3306;
 $dbname = 'users';
@@ -13,8 +15,7 @@ if (isset($_POST["kopce123"])) {
     $password = $_POST["psw"];
     $passrepeat = $_POST["psw-repeat"];
     $selected = $_POST["developerType"];
-    require_once 'dbh.inc.php';
-    require_once 'Functions.php';
+
     if (strcmp($password, $passrepeat)!=0){
         header('location: ../Register.php?error=password');
         exit();

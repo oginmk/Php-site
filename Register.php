@@ -3,8 +3,9 @@ include 'PHP/register.php'
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <title>Register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/registerStylesheet.css">
 </head>
@@ -70,7 +71,7 @@ include 'PHP/register.php'
 </form>
 
 <div class="container signin">
-    <p>Already have an account? <a href="LoginPage.html">Sign in</a>.</p>
+    <p>Already have an account? <a href="LoginPage.php">Sign in</a>.</p>
 </div>
 
 </body>
