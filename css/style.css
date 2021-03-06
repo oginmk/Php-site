@@ -8,7 +8,7 @@ body{
 }
 .navbar {
     overflow: hidden;
-    background-color: deepskyblue;
+    background-color: #6CA199;
 }
 .navbar a {
     float: left;

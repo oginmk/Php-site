@@ -1,5 +1,14 @@
 <?php
 include 'dbh.inc.php';
+
+function myconnect(){
+    $host = "localhost";
+    $port = 3306;
+    $dbname = 'users';
+    $DBusername = 'root';
+    $DBpass = '';
+    return mysqli_connect($host,$DBusername,$DBpass,$dbname);
+}
 function password_check($password,$passrepeat){
     if (strcmp($password,$passrepeat)){
         return true;

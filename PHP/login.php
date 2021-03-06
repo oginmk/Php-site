@@ -1,20 +1,14 @@
 <?php
 session_start();
 require_once 'Functions.php';
-$host = "localhost";
-$port = 3306;
-$dbname = 'users';
-$DBusername = 'root';
-$DBpass = '';
-
-$connection = mysqli_connect($host,$DBusername,$DBpass,$dbname);
+$connection = myconnect();
 //proverka dali postoi post
 if (isset($_POST["submitB"])){
     //Zemanje na info za userot
     $email = $_POST["email"];
     $password = $_POST["pass"];
     if (email_check($email)==false){
-        header('location: ../Register.php?error=email');
+        header('location: ../LoginPage.php?error=Invalid');
         exit();
     }
     $sql= "SELECT id,password,nameUser FROM usersinfo WHERE email = '$email' LIMIT 1";
