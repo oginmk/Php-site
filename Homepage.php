@@ -1,13 +1,6 @@
 <?php
 session_start();
-var_dump($_SESSION);
-if (isset($_SESSION['nameUser'])) {
-    $name = $_SESSION['nameUser'];
-    echo "hello " . $name;
-} else {
-    echo "greshka vo cekori";
-}
-session_destroy();
+
 ?>
 
 <!doctype html>
@@ -20,8 +13,17 @@ session_destroy();
 </head>
 <body>
 <div class="navbar">
-    <a href="LoginPage.php">Login</a>
-    <a href="Register.php">Register</a>
+    <?php
+    if (isset($_SESSION['nameUser'])) {
+        $name = $_SESSION['nameUser'];
+        echo "<a href='PHP/logout.php'>Logout</a>";
+    } else {
+       echo "<a href='LoginPage.php'>Login</a>";
+
+       echo '<a href="Register.php">Register</a>';
+    }
+    ?>
+
 
     <div class="container-search">
         <form action="PHP/search.php">
