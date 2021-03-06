@@ -9,7 +9,7 @@ if (isset($_POST['searchButton'])){
     $search = $_POST['search'];
     unset($_SESSION['data']);
     $qry = mysqli_query($connection,"SELECT * FROM usersInfo WHERE (nameUser LIKE '%$search%') OR (email LIKE '%$search%') ");
-    $data = mysqli_fetch_array($qry);
+    $data = mysqli_fetch_all($qry);
     $_SESSION['data']=$data;
     header('location: ../Homepage.php?search=yes');
 }
