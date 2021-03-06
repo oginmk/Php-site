@@ -55,5 +55,15 @@ session_start();
     <h2>Hello</h2>
     <!--   <h3>This is the basic homepage for my PHP project</h3> -->
 </div>
+<?php
+if(isset($_GET["search"])){
+    if ($_GET['search']=='yes'){
+        $data = $_SESSION['data'];
+        $data = array_unique($data);
+//        $data = $data['email'];
+            echo "<br>" .print_r($data). "<br>";
+    }
+}
+?>
 </body>
 </html>
