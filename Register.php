@@ -16,7 +16,20 @@ include 'PHP/register.php'
         <h1>Register</h1>
         <p>Please fill in this form to create an account.</p>
         <hr>
-
+        <?php
+        if(isset($_GET["error"])){
+            if ($_GET['error']=="password"){
+                echo '<p>Passwords don\'t match!!!</p>';
+                echo '<p>Try Again</p>';
+            }elseif($_GET['error']=="email"){
+                echo '<p>Not a valid email!!!</p>';
+                echo '<p>Try Again</p>';
+            }elseif($_GET['error']=="passShort"){
+                echo '<p>Password is too short!!!</p>';
+                echo '<p>Try Again</p>';
+            }
+        }
+        ?>
         <label for="name"><b>Name</b></label>
         <input type="text" placeholder="Enter Name" name="name" id="name" required>
 
@@ -51,6 +64,7 @@ include 'PHP/register.php'
         </select>
         <br>
         <hr>
+
         <button type="submit" class="registerbtn" name="kopce123">Register</button>
     </div>
 </form>

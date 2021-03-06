@@ -27,7 +27,7 @@ if (isset($_POST["kopce123"])) {
         header('location: ../Register.php?error=passShort');
         exit();
     }else{
-        create_user($connection,$name,$email,$password,$selected);
+        create_user($connection,$name,$email,trim($password),$selected);
     }
 }else {
     echo "it doesn't work";
