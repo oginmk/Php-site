@@ -41,21 +41,35 @@ function getFirstDigit($number)
     ///110 -> 11 -> 1 ;
     return $number;
 }
-
-function changeCount(array &$rows, $id)
+function changeCount(&$rows, $id)
 {
-    foreach ($rows as $row) {
-        $dolzina = strlen((string)$id);
-        $prvaBrojka = $id;
-        if ($row[$prvaBrojka] == $prvaBrojka) {
-            $row['count'] +=1;
-            if ($dolzina>0){
-                $id2 = $id%(pow(10,$dolzina));
-                changeCount($row[$id], $id2);
+    foreach ($rows as &$row) {
+        if (is_array($row)) {
+            $dolzina = strlen((string)$id);
+            if ($dolzina == 1) {
+                $prvaBrojka = $id;
+            } else if ($dolzina > 1) {
+                $prvaBrojka = floor($id / (pow(10, $dolzina - 1)));
+            } else
+                break;
+            if (isset($row['category_id'])) {
+                if ($row['category_id'] == $prvaBrojka) {
+                    $row['count'] += 1;
+                    $dolzina = $dolzina-1;
+                    if ($dolzina >= 1) {
+                        $id2 = $id % (pow(10, $dolzina));
+
+                        if (isset($row['category_id'])) {
+                            changeCount($row, $id2);
+                        }
+                    }
+                }
             }
         }
     }
 }
+
+
 //
 //    $dolzina = strlen($kategorija);
 //

@@ -26,76 +26,78 @@ require 'Functions.php';
  * */
 $data = $_SESSION['data'];
 $rows = array(
-    1 => array(
+    array(
         "count" => 0,
         "parent_id" => '0',
+        'category_id' => '1',
         "category_value" => "FrontEnd",
-        11 => array(
+        array(
             "count" => 0,
-            "category_id" => '11',
+            "category_id" => '1',
             "parent_id" => '1',
             "category_value" => "Angular",
-        111=>    array(
+            array(
                 "count" => 0,
-                "category_id" => '111',
+                "category_id" => '1',
                 "parent_id" => '11',
                 "category_value" => "AngularJS",
             ),
-        112=>    array(
+            array(
                 "count" => 0,
-                "category_id" => '112',
+                "category_id" => '2',
                 "parent_id" => '11',
                 "category_value" => "Angular2 ",
             )
         ),
-        12 => array(
+        array(
             "count" => 0,
             "parent_id" => '1',
+            'category_id' => '2',
             "category_value" => "React",
-        121 => array(
+            array(
                 "count" => 0,
-                "category_id" => '121',
+                "category_id" => '1',
                 "parent_id" => '12',
                 "category_value" => "reactNative",
             )
         ),
-        13 =>array(
+        array(
             "count" => 0,
-            "category_id" => '13',
+            "category_id" => '3',
             "parent_id" => '1',
             "category_value" => "Vue",
         )
     ),
-    2 => array(
+    array(
         "count" => 0,
         "category_id" => '2',
         "parent_id" => '0',
         "category_value" => "BackEnd",
-        21 => array(
+        array(
             "count" => 0,
-            "category_id" => '21',
+            "category_id" => '1',
             "parent_id" => '2',
             "category_value" => "PHP",
-            211 =>array(
+            array(
                 "count" => 0,
-                "category_id" => '211',
+                "category_id" => '1',
                 "parent_id" => '21',
                 "category_value" => "Symfony",
                 array(
                     "count" => 0,
-                    "category_id" => '2111',
+                    "category_id" => '1',
                     "parent_id" => '211',
                     "category_value" => "Silex",
                 )
             ),
             array(
                 "count" => 0,
-                "category_id" => '212',
+                "category_id" => '2',
                 "parent_id" => '21',
                 "category_value" => "Laravel",
                 array(
                     "count" => 0,
-                    "category_id" => '2121',
+                    "category_id" => '1',
                     "parent_id" => '212',
                     "category_value" => "Lumen",
                 )
@@ -103,34 +105,38 @@ $rows = array(
         ),
         array(
             "count" => 0,
-            "category_id" => '22',
+            "category_id" => '2',
             "parent_id" => '2',
             "category_value" => "NodeJS",
             array(
                 "count" => 0,
-                "category_id" => '221',
+                "category_id" => '1',
                 "parent_id" => '22',
                 "category_value" => "Express",
             ),
             array(
                 "count" => 0,
-                "category_id" => '222',
+                "category_id" => '2',
                 "parent_id" => '22',
                 "category_value" => "NestJS",
             )
         )
     )
 );
+
 foreach ($data as $temp) {
     $kategorija = $temp[4];
     $kategorija = intval($kategorija);
-    changeCount($rows,$kategorija);
+    changeCount($rows, $kategorija);
 }
-foreach ($data as $temp){
+foreach ($data as $temp) {
     echo '<pre>';
     var_export($temp[4]);
     echo '</pre>';
 }
+echo '<pre>';
+var_dump($rows);
+echo '</pre>';
 
 //$_SESSION['vardrump'] = $rows;
 //header('location: ../Homepage.php?search=yes');
