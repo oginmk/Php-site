@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ?>
 
 <!doctype html>
@@ -58,18 +57,11 @@ session_start();
 <div id="results">
 <h3>
 <?php
+require 'PHP/Functions.php';
 if(isset($_GET["search"])){
     if ($_GET['search']=='yes') {
-        $data = $_SESSION['data'];
         $test = $_SESSION['vardrump'];
-        foreach ($data as $temp){
-            echo '<pre>';
-            var_export($temp[4]);
-            echo '</pre>';
-        }
-        echo '<pre>';
-        var_export($test);
-        echo '</pre>';
+        PrintTRee($test);
     }
 
 }

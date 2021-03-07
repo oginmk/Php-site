@@ -79,7 +79,7 @@ body{
     font-style: italic;
 }
 body {
-    background-image: url("../images/slika.jpg");
+    background-color: rgba(0,34,88,255);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -91,8 +91,16 @@ h3{
     text-align: left!important;
     padding-right: 20px;
     opacity:1;
+
 }
 #results{
-    background-color: rgba(108, 161, 153, 0.5);
+    background-color: rgba(0,103,178,255);
     display: block;
+    width: 70%;
+    margin: 0 auto;
+}
+li{
+    color: midnightblue;
+    text-align: left;
+    list-style:none;
 }

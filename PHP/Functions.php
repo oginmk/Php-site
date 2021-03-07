@@ -32,16 +32,7 @@ function create_user($connection, $name, $email, $password, $selected)
     }
 }
 
-function getFirstDigit($number)
-{
-    while ($number > 10) {
-        $number = $number / 10;
-    }
-
-    ///110 -> 11 -> 1 ;
-    return $number;
-}
-function changeCount(&$rows, $id)
+function changeCount(&$rows, $id, $name)
 {
     foreach ($rows as &$row) {
         if (is_array($row)) {
@@ -60,8 +51,11 @@ function changeCount(&$rows, $id)
                         $id2 = $id % (pow(10, $dolzina));
 
                         if (isset($row['category_id'])) {
-                            changeCount($row, $id2);
+                            changeCount($row, $id2,$name);
                         }
+                    }else
+                    {
+                        array_push($row['developer_name'],$name);
                     }
                 }
             }
@@ -69,6 +63,27 @@ function changeCount(&$rows, $id)
     }
 }
 
+function PrintTRee(&$rows){
+    foreach ($rows as &$row){
+        if (is_array($row)){
+            if (isset($row['count'])) {
+                if ($row['count'] > 0) {
+                    if (!empty($row['developer_name'])){
+                        $myarr = implode('<br>',$row['developer_name']);
+                        echo '<ul>' . $row["category_value"] . ' ' . '('.$row['count'].')';
+                        echo '<li>'.'<p>'.'User/Users: '.'<br><br>'.$myarr.'</p>'.'</li>';
+                        PrintTRee($row);
+                        echo '</ul>';
+                    }else {
+                        echo '<ul>' . $row["category_value"] . ' '.'(' . $row['count'].')';
+                        PrintTRee($row);
+                        echo '</ul>';
+                    }
+                }
+            }
+        }
+    }
+}
 
 //
 //    $dolzina = strlen($kategorija);
