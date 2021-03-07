@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +23,9 @@
         <button type="submit" name="submitB">Login</button>
     </div>
 </form>
+<div class="container signin">
+    <p>Dont have an account? <a href="Register.php">Register</a>.</p>
+</div>
 <?php
  if(isset($_GET["success"])){
      if ($_GET['success']==1){
@@ -30,6 +36,10 @@
      if ($_GET['error']=="Invalid"){
          echo '<p>INVALID LOGIN CREDENTIALS</p>';
          echo '<p>TRY AGAIN</p>';
+     }
+     if ($_GET['error']=="noLogin"){
+         echo '<p>Please Login</p>';
+         session_regenerate_id();
      }
  }
 ?>

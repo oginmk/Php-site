@@ -13,21 +13,26 @@ if (isset($_POST["submitB"])){
     }
     $sql= "SELECT id,password,nameUser,email FROM usersinfo WHERE email = '$email' LIMIT 1";
     $quer = mysqli_query($connection,$sql);
-
-//proverka dali postoi
+//proverka dali postoi userot
     $row = mysqli_fetch_array($quer);
     if (mysqli_num_rows($quer) == 1){
-//        nesho session start i redirect vo home page
         $passwordtemp = $row['password'];
         $id = $row['id'];
         $nameUser = $row['nameUser'];
         $email = $row['email'];
         $statement = password_verify($password,$passwordtemp);
         if ($statement==true){
+
             $_SESSION['nameUser']=$nameUser;
             $_SESSION['email']=$email;
-            header('location: ../Homepage.php');
-            exit();
+            if (isset($_SESSION['searchMEM'])){
+                session_regenerate_id();
+                header('location: ../PHP/search.php');
+                exit();
+            }else {
+                header('location: ../Homepage.php');
+                exit();
+            }
         }
     }else{
         header('location: ../LoginPage.php?error=Invalid');

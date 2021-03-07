@@ -35,6 +35,10 @@ include 'PHP/register.php'
                 echo '<p>Invalid Username!!!</p>';
                 echo '<p>Try Again</p>';
             }
+        }else if(isset($_SESSION['searchMEM'])){
+            session_regenerate_id();
+            header('location: ../PHP/search.php');
+            exit();
         }
         ?>
         <label for="name"><b>Name</b></label>
