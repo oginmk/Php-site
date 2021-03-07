@@ -8,7 +8,7 @@ body{
 }
 .navbar {
     overflow: hidden;
-    background-color: #6CA199;
+    background-color: rgb(10, 90, 145);
 }
 .navbar a {
     float: left;
@@ -79,7 +79,7 @@ body{
     font-style: italic;
 }
 body {
-    background-color: rgba(0,34,88,255);
+    background-image: url("../images/slika.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -94,13 +94,13 @@ h3{
 
 }
 #results{
-    background-color: rgba(0,103,178,255);
+    background-color: rgb(5, 66, 103);
     display: block;
     width: 70%;
     margin: 0 auto;
 }
 li{
-    color: midnightblue;
+    color: white;
     text-align: left;
     list-style:none;
 }
