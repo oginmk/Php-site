@@ -63,7 +63,6 @@ if(isset($_GET["search"])){
         $test = $_SESSION['vardrump'];
         PrintTRee($test);
     }
-
 }
 ?>
 </h3>

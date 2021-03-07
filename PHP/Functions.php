@@ -31,7 +31,7 @@ function create_user($connection, $name, $email, $password, $selected)
         exit();
     }
 }
-
+// changes count value of the structure , and inserts name of dev in designated structure
 function changeCount(&$rows, $id, $name)
 {
     foreach ($rows as &$row) {
@@ -62,7 +62,7 @@ function changeCount(&$rows, $id, $name)
         }
     }
 }
-
+// prints structure tree
 function PrintTRee(&$rows){
     foreach ($rows as &$row){
         if (is_array($row)){
@@ -70,8 +70,8 @@ function PrintTRee(&$rows){
                 if ($row['count'] > 0) {
                     if (!empty($row['developer_name'])){
                         $myarr = implode('<br>',$row['developer_name']);
-                        echo '<ul>' . $row["category_value"] . ' ' . '('.$row['count'].')';
-                        echo '<li>'.'<p>'.'User/Users: '.'<br><br>'.$myarr.'</p>'.'</li>';
+                        echo '<ul><div id="div1">' . $row["category_value"] . ' ' . '('.$row['count'].')'.'</div>';
+                        echo '<div id="div2"> <li>'.' <p style="text-align: right">'.'User/Users: '.'<br><br>'.$myarr.'</p> '.'</li> </div>';
                         PrintTRee($row);
                         echo '</ul>';
                     }else {
