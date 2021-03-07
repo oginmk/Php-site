@@ -18,7 +18,7 @@ include 'PHP/register.php'
         <p>Please fill in this form to create an account.</p>
         <hr>
         <?php
-        if(isset($_GET["error"])){
+        if(isset($_GET["error"]) OR (isset($_SESSION['searchMEM']))){
             if ($_GET['error']=="password"){
                 echo '<p>Passwords don\'t match!!!</p>';
                 echo '<p>Try Again</p>';
@@ -34,12 +34,13 @@ include 'PHP/register.php'
             }elseif($_GET['error']=="Error"){
                 echo '<p>Invalid Username!!!</p>';
                 echo '<p>Try Again</p>';
+            }elseif(isset($_SESSION['searchMEM'])){
+                session_regenerate_id();
+                header('location: ../PHP/search.php');
+                exit();
             }
-        }else if(isset($_SESSION['searchMEM'])){
-            session_regenerate_id();
-            header('location: ../PHP/search.php');
-            exit();
         }
+
         ?>
         <label for="name"><b>Name</b></label>
         <input type="text" placeholder="Enter Name" name="name" id="name" required>
@@ -56,22 +57,22 @@ include 'PHP/register.php'
         <label for="devtype"><b>Choose your preferred developer type</b></label>
         <br>
         <select name="developerType" id="devtype">
-            <option value="FrontEnd">Front End Developer</option>
-            <option value="Angular" >- Angular</option>
-            <option value="AngularJS" >&nbsp;&nbsp;- AngularJS</option>
-            <option value="Angular2" >&nbsp;&nbsp;- Angular 2</option>
-            <option value="React" >- React</option>
-            <option value="reactNative">&nbsp;&nbsp;- React native</option>
-            <option value="Vue">- Vue</option>
-            <option value="BackEnd" class="option">Back End Developer</option>
-            <option value="PHP">- PHP</option>
-            <option value="Symfony" >&nbsp;&nbsp;- Symfony</option>
-            <option value="Silex" >&nbsp;&nbsp;&nbsp;&nbsp;- Silex</option>
-            <option value="Laravel" >&nbsp;&nbsp;- Laravel</option>
-            <option value="Lumen" >&nbsp;&nbsp;&nbsp;&nbsp;- Lumen</option>
-            <option value="NodeJS">- NodeJS</option>
-            <option value="Express" >&nbsp;&nbsp;- Express</option>
-            <option value="NestJS" >&nbsp;&nbsp;- NestJS</option>
+            <option value="1">Front End Developer</option>
+            <option value="11" >- Angular</option>
+            <option value="111" >&nbsp;&nbsp;- AngularJS</option>
+            <option value="112" >&nbsp;&nbsp;- Angular 2</option>
+            <option value="12" >- React</option>
+            <option value="121">&nbsp;&nbsp;- React native</option>
+            <option value="13">- Vue</option>
+            <option value="2">Back End Developer</option>
+            <option value="21">- PHP</option>
+            <option value="211" >&nbsp;&nbsp;- Symfony</option>
+            <option value="2111" >&nbsp;&nbsp;&nbsp;&nbsp;- Silex</option>
+            <option value="212" >&nbsp;&nbsp;- Laravel</option>
+            <option value="2121" >&nbsp;&nbsp;&nbsp;&nbsp;- Lumen</option>
+            <option value="22">- NodeJS</option>
+            <option value="221" >&nbsp;&nbsp;- Express</option>
+            <option value="222" >&nbsp;&nbsp;- NestJS</option>
         </select>
         <br>
         <hr>

@@ -2,6 +2,9 @@
 require_once 'Functions.php';
 session_start();
 $connection = myconnect();
+
+//creating search data
+
 if (isset($_POST['searchButton']) OR (isset($_SESSION['searchMEM']))){
     if(isset($_SESSION['nameUser'])){
         $email = $_SESSION['email'];
@@ -19,9 +22,11 @@ if (isset($_POST['searchButton']) OR (isset($_SESSION['searchMEM']))){
         $qry = mysqli_query($connection, "SELECT * FROM usersInfo WHERE (nameUser LIKE '%$search%') OR (email LIKE '%$search%') ");
         $data = mysqli_fetch_all($qry);
         $_SESSION['data'] = $data;
-        header('location: ../Homepage.php?search=yes');
+        //redirect to make data readable
+        header('location: ../PHP/SearchImplement.php');
 
     }else{
+        //if user is not logged in memorize search and redirect
         $_SESSION['searchMEM'] = $_POST['search'];
         $_SESSION['selectMEM'] = $_POST['developerType'];
         header('location: ../LoginPage.php?error=noLogin');

@@ -29,22 +29,22 @@ session_start();
         <form action="PHP/search.php" method="post">
             <label for="devtype">Choose your preferred developer type</label>
             <select name="developerType" id="devtype">
-                <option value="FrontEnd" class="option">Front End Developer</option>
-                <option value="Angular">- Angular</option>
-                <option value="AngularJS">&nbsp;&nbsp;- AngularJS</option>
-                <option value="Angular2">&nbsp;&nbsp;- Angular 2</option>
-                <option value="React">- React</option>
-                <option value="reactNative">&nbsp;&nbsp;- React native</option>
-                <option value="Vue">- Vue</option>
-                <option value="BackEnd" class="option">Back End Developer</option>
-                <option value="PHP">- PHP</option>
-                <option value="Symfony">&nbsp;&nbsp;- Symfony</option>
-                <option value="Silex">&nbsp;&nbsp;&nbsp;&nbsp;- Silex</option>
-                <option value="Laravel">&nbsp;&nbsp;- Laravel</option>
-                <option value="Lumen">&nbsp;&nbsp;&nbsp;&nbsp;- Lumen</option>
-                <option value="NodeJS">- NodeJS</option>
-                <option value="Express">&nbsp;&nbsp;- Express</option>
-                <option value="NestJS">&nbsp;&nbsp;- NestJS</option>
+                <option value="1" class="option">Front End Developer</option>
+                <option value="11">- Angular</option>
+                <option value="111">&nbsp;&nbsp;- AngularJS</option>
+                <option value="112">&nbsp;&nbsp;- Angular 2</option>
+                <option value="12">- React</option>
+                <option value="121">&nbsp;&nbsp;- React native</option>
+                <option value="13">- Vue</option>
+                <option value="2" class="option">Back End Developer</option>
+                <option value="21">- PHP</option>
+                <option value="211">&nbsp;&nbsp;- Symfony</option>
+                <option value="2111">&nbsp;&nbsp;&nbsp;&nbsp;- Silex</option>
+                <option value="212">&nbsp;&nbsp;- Laravel</option>
+                <option value="2121">&nbsp;&nbsp;&nbsp;&nbsp;- Lumen</option>
+                <option value="22">- NodeJS</option>
+                <option value="221">&nbsp;&nbsp;- Express</option>
+                <option value="222">&nbsp;&nbsp;- NestJS</option>
             </select>
             <input type="text" placeholder="Search.." name="search">
             <button type="submit" name="searchButton">Submit</button>
@@ -60,12 +60,18 @@ session_start();
 <?php
 if(isset($_GET["search"])){
     if ($_GET['search']=='yes') {
-        $datapage = $_SESSION['data'];
-//        sortData($datapage);
-        foreach ($datapage as $value) {
-            echo "<pre>" . var_export($value[1]) . "</pre>";
+        $data = $_SESSION['data'];
+        $test = $_SESSION['vardrump'];
+        foreach ($data as $temp){
+            echo '<pre>';
+            var_export($temp[4]);
+            echo '</pre>';
         }
+        echo '<pre>';
+        var_export($test);
+        echo '</pre>';
     }
+
 }
 ?>
 </h3>
