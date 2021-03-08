@@ -51,14 +51,23 @@ session_start();
     </div>
 </div>
 <div style="padding-left: 20px">
-    <h2>Hello</h2>
+    <?php
+    if (isset($_SESSION['nameUser'])) {
+        $namesplit = explode(' ',$name);
+        echo '<h2>Hello '.$namesplit[0].'</h2>';
+    }else
+        echo '<h2>Hello</h2>';
+    ?>
+
     <!--   <h3>This is the basic homepage for my PHP project</h3> -->
 </div>
 <div id="results">
 <?php
 if(isset($_GET["error"])){
-    if ($_GET['error']=="emptySearch"){
-        echo '<p>No Users Found</p>';
+    if ($_GET['error']=="badQuer"){
+        echo '<div class="nousers">There was an error with Your request</div>';
+    }if ($_GET['error']=="emptySearch"){
+        echo '<div class="nousers">No Users Found</div>';
     }
 }
 require 'PHP/Functions.php';
