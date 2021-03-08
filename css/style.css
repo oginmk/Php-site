@@ -95,7 +95,8 @@ h3{
 }
 #results{
     background-color: rgb(10, 90, 145);
-    display: block;
+    display: flex;
+    flex-direction: row;
     width: 70%;
     margin: 0 auto;
 }
@@ -103,4 +104,29 @@ li{
     color: white;
     text-align: left;
     list-style:none;
+    border-bottom: black;
 }
+#div2{
+    text-align: right!important;
+    color: white;
+
+}
+#div1{
+    border-top: solid black 1px;
+}
+#print1{
+    flex-basis: 100%;
+    font-size: 20px;
+}
+/*#print2{*/
+/*    flex-basis: 60%;*/
+/*    font-size: 28px;*/
+/*}*/
+/*#ul2{*/
+/*    padding-inline-start: 0!important;*/
+/*    text-overflow: ellipsis!important;*/
+/*}*/
+/*#div2{*/
+/*    border-bottom: solid black;*/
+/*    border-le*/
+/*}*/

@@ -55,17 +55,18 @@ session_start();
     <!--   <h3>This is the basic homepage for my PHP project</h3> -->
 </div>
 <div id="results">
-<h3>
 <?php
 require 'PHP/Functions.php';
 if(isset($_GET["search"])){
     if ($_GET['search']=='yes') {
         $test = $_SESSION['vardrump'];
-        PrintTRee($test);
+        echo '<div id="print1">';
+        PrintTRee1($test);
+        echo '</div>';
+
     }
 }
 ?>
-</h3>
 </div>
 </body>
 </html>
