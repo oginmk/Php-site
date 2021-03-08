@@ -69,9 +69,8 @@ function PrintTRee1(&$rows){
             if (isset($row['count'])) {
                 if ($row['count'] > 0) {
                     if (!empty($row['developer_name'])){
-                        $myarr = implode(', ',$row['developer_name']);
                         echo '<ul><div id="div1">' . $row["category_value"] . ' ' . '('.$row['count'].')'.'</div>';
-                        $myarr = implode(', ',$row['developer_name']);
+                        $myarr = implode('<br>',$row['developer_name']);
                         echo ' <div id="div2"> '.$myarr.' </div>';
                         PrintTRee1($row);
                         echo '</ul>';
@@ -85,28 +84,7 @@ function PrintTRee1(&$rows){
         }
     }
 }
-//function for printing only username with /ul/
-function PrintTRee2(&$rows){
-    foreach ($rows as &$row){
-        if (is_array($row)){
-            if (isset($row['count'])) {
-                if ($row['count'] > 0) {
-                    if (!empty($row['developer_name'])){
-                        $myarr = implode(', ',$row['developer_name']);
-                        echo '<ul id="ul2"> <div id="div2"> '.$myarr.' </div>';
-                        PrintTRee2($row);
-                        echo '</ul>';
-                    }else {
-                        echo '<ul id="ul2">'.'<br>';
-                        PrintTRee2($row);
-                        echo '</ul>';
 
-                    }
-                }
-            }
-        }
-    }
-}
 
 //
 //    $dolzina = strlen($kategorija);
