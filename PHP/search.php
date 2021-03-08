@@ -18,12 +18,16 @@ if (isset($_POST['searchButton']) OR (isset($_SESSION['searchMEM']))){
             $select = $_POST['developerType'];
             $search = $_POST['search'];
         }
-        unset($_SESSION['data']);
-        $qry = mysqli_query($connection, "SELECT * FROM usersInfo WHERE (nameUser LIKE '%$search%') OR (email LIKE '%$search%') ");
-        $data = mysqli_fetch_all($qry);
-        $_SESSION['data'] = $data;
-        //redirect to make data readable
-        header('location: ../PHP/SearchImplement.php');
+            unset($_SESSION['data']);
+            $qry = mysqli_query($connection, "SELECT * FROM usersInfo WHERE (nameUser LIKE '%$search%') OR (email LIKE '%$search%') ");
+            $data = mysqli_fetch_all($qry);
+            if (!empty($data)){
+                $_SESSION['data'] = $data;
+                //redirect to make data readable
+                header('location: ../PHP/SearchImplement.php');
+            }else{
+                header('location: ../Homepage.php?error=emptySearch');
+            }
 
     }else{
         //if user is not logged in memorize search and redirect

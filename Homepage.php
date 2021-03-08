@@ -56,6 +56,11 @@ session_start();
 </div>
 <div id="results">
 <?php
+if(isset($_GET["error"])){
+    if ($_GET['error']=="emptySearch"){
+        echo '<p>No Users Found</p>';
+    }
+}
 require 'PHP/Functions.php';
 if(isset($_GET["search"])){
     if ($_GET['search']=='yes') {
