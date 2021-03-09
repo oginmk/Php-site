@@ -32,7 +32,8 @@ session_start();
          echo '<p>Successful Creation!</p>';
          echo '<p>You can now log in </p>';
      }
- }if(isset($_GET["error"])){
+ }
+ if(isset($_GET["error"])){
      if ($_GET['error']=="Invalid"){
          echo '<p>INVALID LOGIN CREDENTIALS</p>';
          echo '<p>TRY AGAIN</p>';

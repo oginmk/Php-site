@@ -21,8 +21,7 @@ if (isset($_POST["submitB"])){
         $nameUser = $row['nameUser'];
         $email = $row['email'];
         $statement = password_verify($password,$passwordtemp);
-        if ($statement==true){
-
+        if ($statement){
             $_SESSION['nameUser']=$nameUser;
             $_SESSION['email']=$email;
             if (isset($_SESSION['searchMEM'])){
@@ -33,7 +32,11 @@ if (isset($_POST["submitB"])){
                 header('location: ../Homepage.php');
                 exit();
             }
+        }else{
+            header('location: ../LoginPage.php?error=Invalid');
+            exit();
         }
+
     }else{
         header('location: ../LoginPage.php?error=Invalid');
         exit();
