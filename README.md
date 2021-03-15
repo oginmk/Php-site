@@ -1,5 +1,4 @@
-# Quantox-php
-The test for the Quantot PHP backend internship
+# PHP-site
 
 These instructions are for Windows based operating systems
 
@@ -16,7 +15,7 @@ https://www.7-zip.org/download.html
 -----------
 1.Download Xampp And 7zip. <br>
 
-2.After you have downloaded Xampp head to https://github.com/oginmk/Quantox-php  and download the repository as zip.
+2.After you have downloaded Xampp head to https://github.com/oginmk/Php-site  and download the repository as zip.
 <br>(you can do this by pressing the green 'Code' button  and clicking download as zip)
 
 3.Extract the zip to the folder where you installed xampp -> xammp/htdocs extract here. <br>
@@ -30,11 +29,11 @@ https://www.7-zip.org/download.html
 
 7.There will be an Import button in the middle of the screen in the Navbar, Click Import.
 
-8.Select database from the folder where the project is located  /*your directory/xampp/htdocs/Quantox-php-main/database/
+8.Select database from the folder where the project is located  /*your directory/xampp/htdocs/Php-site-main/database/
 
 9.Click "GO" button located at bottom right
 
-10.Open localhost/Quantox-php-main/Homepage.php
+10.Open localhost/Php-site/Homepage.php
 
 11.Have fun :)
 
